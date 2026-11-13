@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Yui's Travel Agency: plan a 7-day trip through Japan, from Tokyo and Mount Fuji to Kyoto, Nara and Osaka.">
+    <title>Yui's Travel Agency | 7 Days in Japan</title>
+
+    <!-- small butterfly icon shown in the browser tab -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;800&family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- 3rd party library css: glide (carousel), aos (scroll animations), leaflet (map) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.7.1/dist/css/glide.core.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
+
+    <!-- my stylesheet (loaded last so it can override library styles) -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ===== site header and navigation ===== -->
+    <header class="site-header">
+        <a href="#top" class="logo">
+            <img src="images/butterfly-logo.png" alt="blue butterfly logo" class="logo-icon">
+            <span class="logo-text">Yui's <span>Travel Agency</span></span>
+        </a>
+        <nav class="main-nav" aria-label="main navigation">
+            <ul>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#itinerary">Itinerary</a></li>
+                <li><a href="#map-section">Map</a></li>
+                <li><a href="#weather">Weather</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="top">
+
+        <!-- ===== hero carousel (library 1: glide.js) ===== -->
+        <section class="hero" aria-label="featured places">
+            <div class="glide">
+                <div class="glide__track" data-glide-el="track">
+                    <ul class="glide__slides">
+                        <li class="glide__slide">
+                            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Chuurei-tou_Fujiyoshida_17025277650_c59733d6ba_o.jpg?width=1600" alt="Chureito pagoda and Mount Fuji with cherry blossoms">
+                            <div class="hero-caption">
+                                <p class="eyebrow">7 days &middot; 5 stops</p>
+                                <h1>Discover Japan with Yui</h1>
+                                <p>Neon cities, ancient temples and the snowy peak of Mount Fuji, all in one unforgettable week.</p>
+                                <a href="#itinerary" class="btn">See the itinerary</a>
+                            </div>
+                        </li>
+                        <li class="glide__slide">
+                            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Torii_path_with_lantern_at_Fushimi_Inari_Taisha_Shrine,_Kyoto,_Japan.jpg?width=1600" alt="tunnel of orange torii gates with a hanging lantern at Fushimi Inari shrine in Kyoto">
+                            <div class="hero-caption">
+                                <p class="eyebrow">Days 4 &ndash; 5</p>
+                                <h2>Walk through a thousand gates</h2>
+                                <p>Kyoto's shrines, temples and gardens are a trip back in time.</p>
+                                <a href="#destinations" class="btn">Explore destinations</a>
+                            </div>
+                        </li>
+                        <li class="glide__slide">
+                            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/2025_Shibuya_Crossing_at_night.jpg?width=1600" alt="Shibuya crossing in Tokyo lit up at night">
+                            <div class="hero-caption">
+                                <p class="eyebrow">Days 1 &ndash; 2</p>
+                                <h2>Tokyo never sleeps</h2>
+                                <p>Start your adventure in the bright lights of the world's biggest city.</p>
+                                <a href="#gallery" class="btn">View the gallery</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- previous / next arrows -->
+                <div class="glide__arrows" data-glide-el="controls">
+                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<" aria-label="previous slide">&#8592;</button>
+                    <button class="glide__arrow glide__arrow--right" data-glide-dir=">" aria-label="next slide">&#8594;</button>
+                </div>
+
+                <!-- slide dots -->
+                <div class="glide__bullets" data-glide-el="controls[nav]">
+                    <button class="glide__bullet" data-glide-dir="=0" aria-label="slide 1"></button>
+                    <button class="glide__bullet" data-glide-dir="=1" aria-label="slide 2"></button>
+                    <button class="glide__bullet" data-glide-dir="=2" aria-label="slide 3"></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== destinations (library 2: aos animations) ===== -->
+        <section id="destinations" class="section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Where you'll go</h2>
+                <p class="section-intro" data-aos="fade-up">From the big city to the countryside, Yui has planned every stop.</p>
+
+                <div class="card-grid">
+                    <article class="card" data-aos="fade-up">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/2025_Shibuya_Crossing_at_night.jpg?width=800" alt="crowds crossing the Shibuya scramble at night">
+                        <div class="card-body">
+                            <h3>Tokyo</h3>
+                            <p>Cross the famous Shibuya scramble, visit Senso-ji temple in Asakusa and eat your way through the food stalls.</p>
+                        </div>
+                    </article>
+
+                    <article class="card" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Chureito_Pagoda_and_Mount_Fuji.jpg?width=800" alt="red Chureito pagoda in front of Mount Fuji">
+                        <div class="card-body">
+                            <h3>Mount Fuji</h3>
+                            <p>Climb the steps to the Chureito pagoda for the classic view, then relax by Lake Kawaguchiko.</p>
+                        </div>
+                    </article>
+
+                    <article class="card" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Golden_pavilion,_Kinkakuji.jpg?width=800" alt="the Golden Pavilion of Kinkaku-ji reflected in a pond">
+                        <div class="card-body">
+                            <h3>Kyoto</h3>
+                            <p>See the Golden Pavilion, hike through the torii gates of Fushimi Inari and stroll the Arashiyama bamboo grove.</p>
+                        </div>
+                    </article>
+
+                    <article class="card" data-aos="fade-up" data-aos-delay="300">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Dotonbori,_Osaka.jpg?width=800" alt="boardwalk along the Dotonbori canal in Osaka">
+                        <div class="card-body">
+                            <h3>Nara &amp; Osaka</h3>
+                            <p>Bow to the friendly deer of Nara, then finish with street food along Osaka's Dotonbori canal.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== day by day itinerary (also animated with aos) ===== -->
+        <section id="itinerary" class="section section-alt">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Your 7-day itinerary</h2>
+
+                <ol class="timeline">
+                    <li data-aos="fade-up">
+                        <span class="day">Day 1</span>
+                        <h3>Arrive in Tokyo</h3>
+                        <p>Check in to your hotel in Shinjuku and see the city lights from the free observation deck.</p>
+                    </li>
+                    <li data-aos="fade-up">
+                        <span class="day">Day 2</span>
+                        <h3>Old and new Tokyo</h3>
+                        <p>Morning at Senso-ji temple in Asakusa, afternoon in Harajuku and the Shibuya crossing.</p>
+                    </li>
+                    <li data-aos="fade-up">
+                        <span class="day">Day 3</span>
+                        <h3>Mount Fuji day trip</h3>
+                        <p>Take the bus to Fujiyoshida for the Chureito pagoda view and lunch by Lake Kawaguchiko.</p>
+                    </li>
+                    <li data-aos="fade-up">
+                        <span class="day">Day 4</span>
+                        <h3>Bullet train to Kyoto</h3>
+                        <p>Ride the shinkansen west, then walk the torii gates at Fushimi Inari in the late afternoon.</p>
+                    </li>
+                    <li data-aos="fade-up">
+                        <span class="day">Day 5</span>
+                        <h3>Temples and bamboo</h3>
+                        <p>Visit the Golden Pavilion, then explore the Arashiyama bamboo grove and the Gion district.</p>
+                    </li>
+                    <li data-aos="fade-up">
+                        <span class="day">Day 6</span>
+                        <h3>Day trip to Nara</h3>
+                        <p>Meet the deer in Nara Park and see the giant Buddha inside Todai-ji temple.</p>
+                    </li>
+                    <li data-aos="fade-up">
+                        <span class="day">Day 7</span>
+                        <h3>Osaka food tour</h3>
+                        <p>Try takoyaki and okonomiyaki in Dotonbori before flying home from Kansai airport.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- ===== interactive map (library 3: leaflet) ===== -->
+        <section id="map-section" class="section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">The route</h2>
+                <p class="section-intro" data-aos="fade-up">Tap a marker to see what you'll do there.</p>
+                <div id="trip-map" class="trip-map" data-aos="zoom-in"></div>
+            </div>
+        </section>
+
+        <!-- ===== weather chart (library 4: chart.js) ===== -->
+        <section id="weather" class="section section-alt">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">When to go</h2>
+                <p class="section-intro" data-aos="fade-up">Average temperatures in Tokyo. Spring brings cherry blossoms and fall brings red maple leaves.</p>
+                <div class="chart-box" data-aos="fade-up">
+                    <canvas id="weather-chart" aria-label="line chart of average monthly high and low temperatures in Tokyo" role="img"></canvas>
+                </div>
+                <p class="chart-source"><a href="https://www.data.jma.go.jp/stats/data/en/normal/normal.html">Japan Meteorological Agency</a></p>
+            </div>
+        </section>
+
+        <!-- ===== photo gallery (library 5: fslightbox) ===== -->
+        <section id="gallery" class="section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Photo gallery</h2>
+                <p class="section-intro" data-aos="fade-up">Click any photo to open it full screen.</p>
+
+                <div class="gallery-grid">
+                    <a href="https://commons.wikimedia.org/wiki/Special:FilePath/2025_Shibuya_Crossing_at_night.jpg?width=1600" data-fslightbox="japan" data-type="image" data-aos="zoom-in">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/2025_Shibuya_Crossing_at_night.jpg?width=600" alt="Shibuya crossing at night">
+                    </a>
+                    <a href="https://commons.wikimedia.org/wiki/Special:FilePath/Chuurei-tou_Fujiyoshida_17025277650_c59733d6ba_o.jpg?width=1600" data-fslightbox="japan" data-type="image" data-aos="zoom-in">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Chuurei-tou_Fujiyoshida_17025277650_c59733d6ba_o.jpg?width=600" alt="Mount Fuji and the Chureito pagoda in spring">
+                    </a>
+                    <a href="https://commons.wikimedia.org/wiki/Special:FilePath/Torii_path_with_lantern_at_Fushimi_Inari_Taisha_Shrine,_Kyoto,_Japan.jpg?width=1600" data-fslightbox="japan" data-type="image" data-aos="zoom-in">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Torii_path_with_lantern_at_Fushimi_Inari_Taisha_Shrine,_Kyoto,_Japan.jpg?width=600" alt="torii gates at Fushimi Inari shrine">
+                    </a>
+                    <a href="https://commons.wikimedia.org/wiki/Special:FilePath/Golden_pavilion,_Kinkakuji.jpg?width=1600" data-fslightbox="japan" data-type="image" data-aos="zoom-in">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Golden_pavilion,_Kinkakuji.jpg?width=600" alt="the Golden Pavilion in Kyoto">
+                    </a>
+                    <a href="https://commons.wikimedia.org/wiki/Special:FilePath/Nara_deer_lounging_at_Todaiji.jpg?width=1600" data-fslightbox="japan" data-type="image" data-aos="zoom-in">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Nara_deer_lounging_at_Todaiji.jpg?width=600" alt="deer resting near Todai-ji temple in Nara">
+                    </a>
+                    <a href="https://commons.wikimedia.org/wiki/Special:FilePath/Dotonbori,_Osaka.jpg?width=1600" data-fslightbox="japan" data-type="image" data-aos="zoom-in">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Dotonbori,_Osaka.jpg?width=600" alt="the Dotonbori canal in Osaka">
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== footer ===== -->
+    <footer class="site-footer">
+        <p class="footer-logo">
+            <img src="images/butterfly-logo.png" alt="blue butterfly logo" class="logo-icon">
+            <span class="logo-text">Yui's <span>Travel Agency</span></span>
+        </p>
+    </footer>
+
+    <!-- 3rd party library scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.7.1/dist/glide.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.6.1/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fslightbox@3.8.0/index.js"></script>
+    <!-- my javascript (must load after the libraries it uses) -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
